@@ -11,7 +11,6 @@ coursier() {
 }
 
 
-coursier publish . \
-  --sonatype \
+coursier publish \
   --org com.github.alexarchambault.test \
   --version 0.2.0-SNAPSHOT
