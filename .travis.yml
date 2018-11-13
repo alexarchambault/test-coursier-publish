@@ -3,6 +3,8 @@ jdk:
 - oraclejdk8
 before_install:
 - git fetch --tags
+- ./setup-coursier.sh
+- export PATH="$PATH:$(pwd)/coursier/modules/cli/target/pack/bin"
 script: sbt test:compile
 cache:
   directories:
@@ -18,4 +20,4 @@ jobs:
   include:
   - scala: 2.12.7
   - stage: release
-    script: ./publish.sh
+    script: coursier publish
